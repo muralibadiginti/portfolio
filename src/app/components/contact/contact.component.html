@@ -13,7 +13,7 @@
 
     <div class="row g-4">
       <div class="col-lg-5">
-        <div class="contact-info" @staggerList>
+        <div class="contact-info">
           <h3 class="info-title">Contact Information</h3>
           <p class="info-text">Feel free to reach out through any of these channels</p>
           
@@ -21,7 +21,7 @@
             <div class="grid-container">
               <div class="contact-info-item" *ngFor="let info of contactInfo" 
                    [style.--item-color]="info.color"
-                   [@gridAnimation]>
+                  >
                 <div class="icon-wrapper">
                   <i [class]="'bi ' + info.icon"></i>
                 </div>
