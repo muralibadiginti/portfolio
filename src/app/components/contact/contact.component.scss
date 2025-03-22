@@ -1,0 +1,16 @@
+.contact-info-grid {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.contact-info-item {
+  transition: all 0.3s ease-in-out;
+} 

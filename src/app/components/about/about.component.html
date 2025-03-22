@@ -1,0 +1,51 @@
+<section class="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 content-col">
+        <h2 class="title">About Me</h2>
+        <p class="subtitle">Professional Software Developer</p>
+        <p class="about-text">
+          Passionate software developer with expertise in full-stack development and modern web technologies.
+        </p>
+        
+        <div class="experience-grid">
+          <div class="exp-item" *ngFor="let exp of experience" [style.--exp-color]="exp.color">
+            <i [class]="'bi ' + exp.icon + ' exp-icon'"></i>
+
+            <span class="exp-number">{{exp.number  }}</span>
+            <span class="exp-label">{{exp.label}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 skills-col">
+        <div class="skills-section">
+          <h3 class="skills-title">Technical Expertise</h3>
+          <div class="skills-container">
+            <div class="skills-track">
+              <div class="skills-grid" *ngFor="let skillGroup of skillGroups">
+                <div class="skill-card" *ngFor="let skill of skillGroup; let i = index" 
+                     [style.--delay]="i * 0.1"
+                     [style.--skill-color]="skill.color"
+                     [style.--skill-color-rgb]="skill.colorRgb">
+                  <div class="skill-icon">
+                    <i [class]="'bi ' + skill.icon"></i>
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">{{skill.name}}</h4>
+                    <div class="skill-bar">
+                      <div class="skill-progress" [style.width]="skill.level + '%'">
+                        <div class="progress-glow"></div>
+                      </div>
+                    </div>
+                    <div class="skill-level">{{skill.level}}%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

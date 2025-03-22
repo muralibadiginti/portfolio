@@ -1,0 +1,264 @@
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 76px;
+}
+
+.background-shapes .shape {
+  position: absolute;
+  background: linear-gradient(45deg, #0d6efd20, #0dcaf020);
+  border-radius: 50%;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -100px;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -75px;
+  left: -75px;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  right: 5%;
+}
+
+.hero-content {
+  padding: 2rem;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  margin-bottom: 3rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tech-stack {
+  margin-top: 2rem;
+}
+
+.tech-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #0d6efd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.tech-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #343a40;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tech-icon:hover .tech-tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: -40px;
+}
+
+.image-col {
+  position: relative;
+  padding: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.image-background {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 95%;
+  height: 95%;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border-radius: 30px;
+  transform: rotate(-3deg);
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.image-wrapper:hover .hero-image {
+  transform: translateY(-10px);
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  background: white;
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.experience-badge .years {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d6efd;
+  line-height: 1;
+}
+
+.experience-badge .text {
+  font-size: 0.8rem;
+  color: #495057;
+}
+
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .image-wrapper {
+    padding-top: 90%;
+    margin-top: 1.5rem;
+  }
+  
+  .tech-icons {
+    gap: 1rem;
+  }
+  
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .tech-icons {
+    justify-content: center;
+  }
+  
+  .image-wrapper {
+    padding-top: 70%;
+  }
+
+  .experience-badge {
+    padding: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+} 

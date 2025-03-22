@@ -1,0 +1,70 @@
+<section class="projects">
+  <div class="container">
+    <h2 class="section-title" @staggerAnimation>Featured Projects</h2>
+    <p class="section-subtitle" @staggerAnimation>Showcasing some of my best work</p>
+
+    <div class="projects-grid" @staggerAnimation>
+      <div class="project-card" *ngFor="let project of projects" 
+           (click)="showProjectDetails(project)">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="project-overlay">
+            <span class="view-project">View Project</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">{{project.title}}</h3>
+          <p class="project-description">{{project.description}}</p>
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.technologies">{{tech}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details Modal -->
+  <div class="project-modal" *ngIf="selectedProject" (click)="closeProjectDetails()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeProjectDetails()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      
+      <div class="modal-body">
+        <div class="modal-image">
+          <img [src]="selectedProject.image" [alt]="selectedProject.title">
+        </div>
+        
+        <div class="modal-info">
+          <h2>{{selectedProject.title}}</h2>
+          <p class="modal-description">{{selectedProject.description}}</p>
+          
+          <div class="features-section">
+            <h3>Key Features</h3>
+            <ul class="features-list">
+              <li *ngFor="let feature of selectedProject.features">{{feature}}</li>
+            </ul>
+          </div>
+          
+          <div class="tech-section">
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span class="tech-tag" *ngFor="let tech of selectedProject.technologies">
+                {{tech}}
+              </span>
+            </div>
+          </div>
+          
+          <!-- <div class="project-links">
+            <a [href]="selectedProject.liveLink" target="_blank" class="btn btn-primary">
+              <i class="bi bi-link-45deg"></i> Live Demo
+            </a>
+            <a [href]="selectedProject.githubLink" target="_blank" class="btn btn-secondary">
+              <i class="bi bi-github"></i> Source Code
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

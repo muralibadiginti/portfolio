@@ -1,0 +1,194 @@
+.about-section {
+  padding: var(--space-16) 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+  position: relative;
+
+  .about-content {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+
+  .profile-section {
+    display: flex;
+    gap: var(--space-8);
+    align-items: center;
+    margin-bottom: var(--space-12);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .profile-image {
+      flex-shrink: 0;
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: var(--shadow-lg);
+      }
+    }
+
+    .profile-info {
+      h1 {
+        font-size: 3rem;
+        margin-bottom: var(--space-4);
+      }
+
+      .bio {
+        font-size: 1.2rem;
+        color: var(--primary-600);
+        margin-bottom: var(--space-6);
+        line-height: 1.6;
+      }
+
+      .social-links {
+        display: flex;
+        gap: var(--space-2);
+        
+        @media (max-width: 768px) {
+          justify-content: center;
+        }
+
+        .mat-icon-button {
+          background: white;
+          box-shadow: var(--shadow-sm);
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+          }
+
+          i {
+            font-size: 1.5rem;
+            color: var(--primary-900);
+          }
+        }
+      }
+    }
+  }
+
+  mat-divider {
+    margin: var(--space-8) 0;
+  }
+
+  .skills-section {
+    margin-bottom: var(--space-12);
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary-900);
+      margin-bottom: var(--space-8);
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .skill-category {
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary-700);
+        margin-bottom: var(--space-4);
+      }
+
+      .skill-bars {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .skill-item {
+        .skill-header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: var(--space-2);
+          color: var(--primary-600);
+        }
+
+        mat-progress-bar {
+          height: 8px;
+          border-radius: var(--radius-full);
+        }
+      }
+    }
+  }
+
+  .experience-section {
+    h2 {
+      font-size: 2rem;
+      color: var(--primary-900);
+      margin-bottom: var(--space-8);
+      text-align: center;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      max-width: 800px;
+      margin: 0 auto;
+
+      .timeline-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        transition: var(--transition-all);
+
+        &:hover {
+          transform: translateX(8px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-header {
+          margin-bottom: var(--space-4);
+
+          h3 {
+            font-size: 1.25rem;
+            color: var(--primary-900);
+            margin-bottom: var(--space-2);
+          }
+
+          .company {
+            color: var(--accent-600);
+            font-weight: 500;
+            margin-right: var(--space-4);
+          }
+
+          .date {
+            color: var(--primary-500);
+          }
+        }
+
+        p {
+          color: var(--primary-600);
+          margin-bottom: var(--space-4);
+        }
+
+        mat-chip-set {
+          .mat-mdc-chip {
+            background: var(--accent-50);
+            color: var(--accent-600);
+          }
+        }
+      }
+    }
+  }
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--primary-200) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+} 

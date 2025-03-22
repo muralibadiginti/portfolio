@@ -1,0 +1,78 @@
+@use '@angular/material' as mat;
+
+// Modern Color Palette
+$modern-palette: (
+  50: #F8FAFC,
+  100: #F1F5F9,
+  200: #E2E8F0,
+  300: #CBD5E1,
+  400: #94A3B8,
+  500: #64748B,
+  600: #475569,
+  700: #334155,
+  800: #1E293B,
+  900: #0F172A,
+  contrast: (
+    50: #0F172A,
+    100: #0F172A,
+    200: #0F172A,
+    300: #0F172A,
+    400: #F8FAFC,
+    500: #F8FAFC,
+    600: #F8FAFC,
+    700: #F8FAFC,
+    800: #F8FAFC,
+    900: #F8FAFC,
+  )
+);
+
+$accent-palette: (
+  50: #EEF2FF,
+  100: #E0E7FF,
+  200: #C7D2FE,
+  300: #A5B4FC,
+  400: #818CF8,
+  500: #6366F1,
+  600: #4F46E5,
+  700: #4338CA,
+  800: #3730A3,
+  900: #312E81,
+  contrast: (
+    50: #312E81,
+    100: #312E81,
+    200: #312E81,
+    300: #312E81,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+  )
+);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette($modern-palette),
+    accent: mat.define-palette($accent-palette),
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Plus Jakarta Sans, sans-serif',
+    $headline-1: mat.define-typography-level(96px, 96px, 300, $letter-spacing: -1.5px),
+    $headline-2: mat.define-typography-level(60px, 60px, 300, $letter-spacing: -0.5px),
+    $headline-3: mat.define-typography-level(48px, 50px, 400),
+    $headline-4: mat.define-typography-level(34px, 40px, 400),
+    $headline-5: mat.define-typography-level(24px, 32px, 400),
+    $headline-6: mat.define-typography-level(20px, 32px, 500),
+    $body-1: mat.define-typography-level(16px, 24px, 400),
+    $body-2: mat.define-typography-level(14px, 20px, 400),
+    $subtitle-1: mat.define-typography-level(16px, 28px, 400),
+    $subtitle-2: mat.define-typography-level(14px, 22px, 500),
+    $button: mat.define-typography-level(14px, 14px, 500),
+    $caption: mat.define-typography-level(12px, 20px, 400),
+  ),
+  density: 0,
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme); 

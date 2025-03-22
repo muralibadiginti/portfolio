@@ -1,0 +1,104 @@
+.projects-section {
+  padding: var(--space-16) 0;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+  min-height: 100vh;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+
+  .project-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-all);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    mat-card-content {
+      padding: var(--space-4);
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary-900);
+        margin-bottom: var(--space-2);
+      }
+
+      p {
+        color: var(--primary-600);
+        margin-bottom: var(--space-4);
+      }
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+
+      .tech-tag {
+        background: var(--accent-50);
+        color: var(--accent-600);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius-full);
+        font-size: 0.875rem;
+      }
+    }
+
+    mat-card-actions {
+      padding: var(--space-4);
+      display: flex;
+      gap: var(--space-2);
+
+      .mat-button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+      }
+    }
+  }
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--primary-200) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+} 

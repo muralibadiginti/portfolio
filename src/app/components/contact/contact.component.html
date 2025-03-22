@@ -1,0 +1,137 @@
+<section class="contact">
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="section-header text-center" @fadeInUp>
+      <h2 class="title">Get In Touch</h2>
+      <p class="subtitle">Let's discuss your project or just say hello</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="contact-info" @staggerList>
+          <h3 class="info-title">Contact Information</h3>
+          <p class="info-text">Feel free to reach out through any of these channels</p>
+          
+          <div class="contact-info-grid">
+            <div class="grid-container">
+              <div class="contact-info-item" *ngFor="let info of contactInfo" 
+                   [style.--item-color]="info.color"
+                   [@gridAnimation]>
+                <div class="icon-wrapper">
+                  <i [class]="'bi ' + info.icon"></i>
+                </div>
+                <div class="info-content">
+                  <h4>{{info.title}}</h4>
+                  <p *ngIf="info.link">
+                    <a [href]="info.link" target="_blank">{{info.value}}</a>
+                  </p>
+                  <p *ngIf="!info.link">{{info.value}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/murali-badiginti-532600153/" class="social-link" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/muralibadiginti" class="social-link" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="contact-form-wrapper" @fadeInUp>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="form-group">
+              <label for="name">
+                <i class="bi bi-person"></i>
+                Your Name
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                formControlName="name" 
+                class="form-control" 
+                [class.is-invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+                placeholder="Enter your name"
+              >
+              <div class="invalid-feedback" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                {{getErrorMessage('name')}}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                <i class="bi bi-envelope"></i>
+                Email Address
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email" 
+                class="form-control"
+                [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+                placeholder="Enter your email"
+              >
+              <div class="invalid-feedback" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                {{getErrorMessage('email')}}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">
+                <i class="bi bi-chat-square-text"></i>
+                Subject
+              </label>
+              <input 
+                type="text" 
+                id="subject" 
+                formControlName="subject" 
+                class="form-control"
+                [class.is-invalid]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+                placeholder="What's this about?"
+              >
+              <div class="invalid-feedback" *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+                {{getErrorMessage('subject')}}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">
+                <i class="bi bi-pencil-square"></i>
+                Message
+              </label>
+              <textarea 
+                id="message" 
+                formControlName="message" 
+                class="form-control" 
+                rows="5"
+                [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                placeholder="Write your message here..."
+              ></textarea>
+              <div class="invalid-feedback" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+                {{getErrorMessage('message')}}
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isSubmitting">
+              <i class="bi bi-send-fill"></i>
+              {{isSubmitting ? 'Sending...' : 'Send Message'}}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

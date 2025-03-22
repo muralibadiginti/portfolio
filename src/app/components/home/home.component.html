@@ -1,0 +1,50 @@
+<section class="hero">
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-6 content-col" [@fadeInLeft]>
+        <div class="hero-content">
+          <div class="hero-subtitle">👋 Hi there, I'm</div>
+          <h1 class="hero-title">Murali Badiginti</h1>
+          <p class="hero-description">Full-stack developer crafting modern web experiences</p>
+          <div class="hero-text">
+            Specialized in building exceptional digital experiences. 
+            Bringing ideas to life with clean code and modern design.
+          </div>
+          <div class="cta-buttons">
+            <button class="btn btn-primary btn-lg me-3" (click)="navigateToProjects()">
+              <i class="bi bi-code-square me-2"></i>
+              View My Work
+            </button>
+            <button class="btn btn-outline-secondary btn-lg" (click)="navigateToContact()">
+              <i class="bi bi-envelope me-2"></i>Contact
+            </button>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-label">Tech Stack</span>
+            <div class="tech-icons">
+              <span class="tech-icon" *ngFor="let tech of technologies">
+                <i [class]="'bi ' + tech.icon"></i>
+                <span class="tech-tooltip">{{tech.name}}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 image-col" [@fadeInRight]>
+        <div class="image-wrapper">
+          <div class="image-background"></div>
+          <img src="assets/hero-image.jpg" alt="Hero" class="hero-image">
+          <div class="experience-badge">
+            <span class="years">4+</span>
+            <span class="text">Years of<br>Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
