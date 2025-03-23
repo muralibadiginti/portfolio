@@ -1,0 +1,19 @@
+/* Light mode styles */
+.about-container {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+section {
+  background-color: #ffffff; /* Light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode .about-container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e; /* Dark mode */
+} 

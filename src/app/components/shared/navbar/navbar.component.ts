@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 export class NavbarComponent {
   isScrolled = false;
   isMenuOpen = false;
+  isDarkMode = false;
 
   @HostListener('window:scroll')
   onWindowScroll() {
@@ -25,5 +26,10 @@ export class NavbarComponent {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-mode', this.isDarkMode);
   }
 } 

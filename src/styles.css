@@ -12,3 +12,48 @@
 .hero:hover {
   transform: scale(1.05);
 }
+
+/* Light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+} 
+
+/* Update other elements as needed */
+.navbar {
+  background-color: #f8f9fa; /* Light mode */
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e; /* Dark mode */
+}
+
+/* Section styles */
+section {
+  background: #ffffff; /* Light mode */
+}
+
+body.dark-mode section {
+  background: #1e1e1e; /* Dark mode */
+}
+
+/* Additional styles for other components */
+.container {
+  background-color: #ffffff; /* Light mode */
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e; /* Dark mode */
+}
+
+h1, h2, h3, p {
+  color: inherit; /* Ensure text color adapts to the mode */
+}
+
+/* Add more styles for other components as necessary */

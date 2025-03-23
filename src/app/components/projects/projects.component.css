@@ -8,9 +8,29 @@
 
 .projects {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: inheret;
   min-height: 100vh;
 }
+
+ight mode styles */
+.projects-container {
+  background-color: #ffffff; /* Light mode */
+  color: #000000;
+}
+
+section {
+  background-color: #ffffff; /* Light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode .projects-container {
+  background-color: #1e1e1e; /* Dark mode */
+  color: #ffffff;
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e; /* Dark mode */
+} 
 
 .section-title {
   text-align: center;
